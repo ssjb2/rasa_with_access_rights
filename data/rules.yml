@@ -1,0 +1,24 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Check user last visit
+  steps:
+  - intent: check_last_visit
+  - action: action_search_last_user_visit
+
+
+- rule: doctor checks patient last visit
+  steps:
+  - intent: when_patient_last_visited_doctor
+  - action: action_doctor_search_last_user_visit
